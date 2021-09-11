@@ -38,3 +38,31 @@ def find_pet_by_name (shop, pet_name):
     for pet in shop["pets"]:
         if pet["name"] == pet_name:
             return pet
+
+def remove_pet_by_name(shop, remove_pet_name):
+    # pet_to_deleat = None
+    find_pet = find_pet_by_name(shop, remove_pet_name)
+
+    if find_pet["name"] == remove_pet_name:
+        shop["pets"].remove(find_pet)
+        pet_to_deleat = find_pet
+        return find_pet["name"]
+    
+def add_pet_to_stock (shop, add_new_pet):
+    shop["pets"].append(add_new_pet)
+
+
+def get_customer_cash (customer):
+    return customer["cash"]
+
+def remove_customer_cash (customer, amount_of_removerd_moeny):
+    customer["cash"] = customer["cash"] - amount_of_removerd_moeny
+    return customer["cash"]
+
+def get_customer_pet_count(custoemr):
+    total_customer_pets = len(custoemr["pets"])
+    return total_customer_pets
+
+def add_pet_to_customer(customer, new_pet):
+
+
